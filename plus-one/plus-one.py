@@ -1,21 +1,20 @@
 class Solution:
     def plusOne(self, digits: List[int]) -> List[int]:
         
-        n = len(digits)
-        carry = 1  # Initialize the carry to 1
+        digits = digits[::-1]
+        one,i = 1,0
         
-        # Iterate through the digits from right to left
-        for i in range(n - 1, -1, -1):
-            if carry == 0:
-                break  # No need to continue if there's no carry
+        while one:
+            if i<len(digits):
+                if digits[i]==9:
+                    digits[i]=0
+                else:
+                    digits[i]+=1
+                    one=0
                 
-            current_sum = digits[i] + carry  # Add the carry to the current digit
-            carry = current_sum // 10  # Update the carry for the next iteration
-            digits[i] = current_sum % 10  # Update the current digit
-        
-        # If there is still a carry after the loop (e.g., when incrementing 9), insert it as a new most significant digit
-        if carry > 0:
-            digits.insert(0, carry)
-        
-        return digits
-                    
+                
+            else:
+                digits.append(1)
+                one=0
+            i=i+1
+        return digits[::-1]
