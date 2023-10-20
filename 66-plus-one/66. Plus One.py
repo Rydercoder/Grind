@@ -11,8 +11,6 @@ class Solution:
                 else:
                     digits[i]+=1
                     one=0
-                
-                
             else:
                 digits.append(1)
                 one=0
