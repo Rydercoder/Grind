@@ -9,5 +9,5 @@ class Solution:
             stack.append(n)
         i=0
         while stack:
-              s[i] = stack.pop()
-              i= i+1
+            s[i] = stack.pop()
+            i = i + 1
