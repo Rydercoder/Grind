@@ -4,9 +4,10 @@ class Solution:
         
         
         for r in range(1,len(nums)):
-           if nums[r] != nums[r-1]:
+            if nums[r] != nums[r-1]:
                 nums[l] = nums[r]
                 l= l+1
+                r= r+1
             
         return l
      
