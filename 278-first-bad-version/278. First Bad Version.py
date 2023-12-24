@@ -8,7 +8,7 @@ class Solution:
         result = n
         
         while low <= high:
-            mid = low + (high - low) // 2  # Avoid integer overflow by calculating mid this way
+            mid = (high + low) // 2  
             if isBadVersion(mid):
                 result = mid
                 high = mid - 1
